@@ -1,9 +1,4 @@
-import { FunctionComponent, useState } from "react";
-// import SocialButton from "./SocialButton";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import EmailIcon from '@mui/icons-material/Email';
-import IconButton from '@mui/material/IconButton';
+import { FunctionComponent, useState, useEffect } from "react";
 // @ts-ignore
 import { Typing } from "typing-effect-reactjs"
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -11,6 +6,8 @@ import { Link } from 'react-scroll'
 import ReactFlagsSelect from 'react-flags-select';
 import Navbar from "./Navbar";
 import ContactOptions from "./ContactOptions";
+import { useTranslation } from "react-i18next";
+import i18n from '../i18n';
 
 const getAge = (date: Date) => {
     const month_diff = Date.now() - new Date(date).getTime();
@@ -20,6 +17,7 @@ const getAge = (date: Date) => {
 }
 
 const Home: FunctionComponent = () => {
+    const { t } = useTranslation()
     const [selected, setSelected] = useState('GB');
 
     setTimeout(() => {
@@ -30,12 +28,16 @@ const Home: FunctionComponent = () => {
         arrow.style.display = 'grid'
     }, 6000)
 
+    useEffect(() => {
+        i18n.changeLanguage(selected);
+    }, [selected])
+
     return (
         <div className="Home">
             <Navbar />
             <div className="HomeBox">
                 <Typing
-                    text="Hi, I'm Kamil Owczarek."
+                    text={t('mainH1')}
                     id="typing"
                     styleClass="noRightBorder"
                     shouldDelete="false"
@@ -46,7 +48,7 @@ const Home: FunctionComponent = () => {
                     disableBlinkingOnEnd="false"
                 />
                 <div className="HomeBoxDescription">
-                    {getAge(new Date('1997-01-31'))} year old, Javascript engineer, practicing minimalisting style & doing magic things to make internet a better place. View my <Link to="Education">Education</Link> or  <Link to="Projects">Projects</Link>. You can reach Me via social media or send an email at KamilOw97@gmail.com.
+                    {getAge(new Date('1997-01-31'))} {t('HomeBoxDescription')} <Link to="Education">{t('Education')}</Link> {t('or')} <Link to="Projects">{t('Projects')}</Link>. {t('HomeBoxDescription2')}
                 </div>
                 <div className="HomeBoxSocial">
                     <ContactOptions />

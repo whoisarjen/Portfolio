@@ -4,6 +4,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import EmailIcon from '@mui/icons-material/Email';
 import IconButton from '@mui/material/IconButton';
 import ContactOptions from "./ContactOptions";
+import { useTranslation } from "react-i18next";
 
 const contact = [
     {
@@ -27,9 +28,11 @@ const contact = [
 ].reverse();
 
 const Contact: FunctionComponent = () => {
+    const { t } = useTranslation()
+    
     return (
         <div className="Contact">
-            <h2>Contact</h2>
+            <h2>{t('Contact')}</h2>
             <div className="ContactGrid">
                 <ContactOptions isAddDiv={true} />
             </div>

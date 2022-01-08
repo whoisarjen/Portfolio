@@ -72,6 +72,7 @@ a {
 
 .HomeBoxDescription {
   font-size: 1.4rem;
+  text-transform: capitalize; 
 }
 
 .Navbar {
@@ -105,7 +106,8 @@ h2 {
 }
 
 .h2Description {
-  width: 100%;
+  width: calc( 100% - calc(var(--padding) * 2));
+  padding: var(--padding);
   max-width: 600px;
   text-align: center;
   margin: auto;
@@ -121,6 +123,13 @@ h2 {
 .Projects {
   min-height: 100vh;
   display: grid;
+}
+
+.ProjectsLetsTalk{
+  padding: var(--padding);
+  width: calc(100% - calc(var(--padding) * 2));
+  margin: auto;
+  text-align: center;
 }
 
 .ProjectsBox {
@@ -151,7 +160,6 @@ h2 {
 .ProjectsBox img {
   width: 100%;
   margin: auto;
-  cursor: pointer;
 }
 
 .ProjectBoxDescription {

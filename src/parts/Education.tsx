@@ -8,16 +8,16 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import Typography from '@mui/material/Typography';
+import { useTranslation } from "react-i18next";
 
 const Education: FunctionComponent = () => {
+    const { t } = useTranslation()
+
     return (
         <div className="Education">
-            <h2 className="defaultPadding">Education</h2>
+            <h2 className="defaultPadding">{t('Education')}</h2>
             <div className="h2Description defaultPadding">
-                All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization.
-                iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue.
-                MongoDB as main database allow fast writting to DB, which is the most important part of "native experience".
-                When user is forced to search in DB, Juciify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.
+                {t('EducationDescription')}
             </div>
             <Timeline position="alternate" sx={{ margin: 'auto', maxWidth: '700px' }}>
                 <TimelineItem>
@@ -27,7 +27,7 @@ const Education: FunctionComponent = () => {
                         variant="body2"
                         color="text.secondary"
                     >
-                        10.2021 - now
+                        10.2021 - {t('Now')}
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                         <TimelineConnector />
@@ -37,10 +37,10 @@ const Education: FunctionComponent = () => {
                         <TimelineConnector />
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: '12px', px: 2 }}>
-                        <Typography variant="h6" component="span">
-                            Master IT
+                        <Typography sx={{ fontWeight: 700 }} variant="h6" component="span">
+                            {t('MasterIT')}
                         </Typography>
-                        <Typography>Wydział Fizyki i Informatyki Stosowanej Uniwersytetu Łódzkiego</Typography>
+                        <Typography sx={{ fontSize: '0.9rem' }}>Wydział Fizyki i Informatyki Stosowanej Uniwersytetu Łódzkiego</Typography>
                     </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>
@@ -59,10 +59,10 @@ const Education: FunctionComponent = () => {
                         <TimelineConnector />
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: '12px', px: 2 }}>
-                        <Typography variant="h6" component="span">
-                            Engineere IT
+                        <Typography sx={{ fontWeight: 700 }} variant="h6" component="span">
+                            {t('EngineereIT')}
                         </Typography>
-                        <Typography>Wydział Fizyki i Informatyki Stosowanej Uniwersytetu Łódzkiego
+                        <Typography sx={{ fontSize: '0.9rem' }}>Wydział Fizyki i Informatyki Stosowanej Uniwersytetu Łódzkiego
                             &
                             Wyższa Szkoła Informatyki i Umiejętności w Łodzi
                         </Typography>
@@ -84,10 +84,10 @@ const Education: FunctionComponent = () => {
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: '12px', px: 2 }}>
-                        <Typography variant="h6" component="span">
-                            High School IT
+                        <Typography sx={{ fontWeight: 700 }} variant="h6" component="span">
+                            {t('HighSchoolIT')}
                         </Typography>
-                        <Typography>Zespół szkół zawodowych im. stanisława staszica w Aleksandrowie Łódzkim</Typography>
+                        <Typography sx={{ fontSize: '0.9rem' }}>Zespół szkół zawodowych im. stanisława staszica w Aleksandrowie Łódzkim</Typography>
                     </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>
@@ -106,10 +106,10 @@ const Education: FunctionComponent = () => {
                         <TimelineConnector />
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: '12px', px: 2 }}>
-                        <Typography variant="h6" component="span">
-                            Basic
+                        <Typography sx={{ fontWeight: 700 }} variant="h6" component="span">
+                            {t('Basic')}
                         </Typography>
-                        <Typography>Basic education</Typography>
+                        <Typography sx={{ fontSize: '0.9rem' }}>{t('BasicDescription')}</Typography>
                     </TimelineContent>
                 </TimelineItem>
             </Timeline>

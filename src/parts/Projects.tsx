@@ -1,13 +1,14 @@
 import { FunctionComponent, useState } from "react";
+import { useTranslation } from "react-i18next";
 import ProjectsImage from "./ProjectsImage";
 
 const ProjectsArray = [
     {
         title: 'Juicify 2.0 via React',
-        status: 'Preparing for first live tests.',
-        description: `Juicify is a PWA application, which is a coach in your pocket. It allow all function like MyFitnessPal and more, but also provides an opportunity of tracking workouts, watching other's people progress and the way they train. The main point of the app is analyzing user's way of eatting and helping him achieving body goals in the fastest and the most sience way. Not enough? It almost fully works in offline mode.`,
+        status: 'Juicify2Status',
+        description: `Juicify1Description`,
         technology: ['Next.js', 'React', 'Redux toolkit', 'Typescript', 'Javascript', 'MongoDB', 'Express', 'JWT', 'Redis', 'Socket.io', 'PWA', 'IndexedDB', 'MUI', 'i18n', 'Cookies', 'etc.'],
-        nerdInformations: `All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization. iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue. MongoDB as main database allow fast writting to DB, which is the most important part of "native experience". When user is forced to search in DB, Juciify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.`,
+        nerdInformations: `Juicify1NerfInformations`,
         live: '',
         livePass: '',
         source: 'https://github.com/whoisarjen/Juicify',
@@ -15,10 +16,10 @@ const ProjectsArray = [
     },
     {
         title: 'Juicify 1.0 via Vue',
-        status: 'Project ended. Reached satisfying level of working as first such big project and got 500+ users, because of goal, which is mastering React, decided to stop working on this code and rewrite whole application.',
-        description: `Juicify is a PWA application, which is a coach in your pocket. It allow all function like MyFitnessPal and more, but also provides an opportunity of tracking workouts, watching other's people progress and the way they train. The main point of the app is analyzing user's way of eatting and helping him achieving body goals in the fastest and the most sience way. Not enough? It almost fully works in offline mode.`,
+        status: 'Juicify2Status',
+        description: `Juicify2Description`,
         technology: ['Vue', 'Javascript', 'MongoDB', 'Express', 'JWT', 'Redis', 'Socket.io', 'PWA', 'IndexedDB', 'Vuetify', 'i18n', 'Cookies', 'etc.'],
-        nerdInformations: `All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization. iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue. MongoDB as main database allow fast writting to DB, which is the most important part of "native experience". When user is forced to search in DB, Juciify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.`,
+        nerdInformations: `Juicify2NerfInformations`,
         live: 'https://juicify.app',
         livePass: 'Marek : Marek123',
         source: 'https://github.com/whoisarjen/Juicify-Beta-V1.0',
@@ -27,19 +28,18 @@ const ProjectsArray = [
 ]
 
 const Projects: FunctionComponent = () => {
+    const { t } = useTranslation()
     const [img, setImg] = useState('')
     const [isProjectDialog, setIsProjectDialog] = useState(false)
 
     return (
         <div className="Projects">
             <div className="marginAuto">
-                <h2>Projects</h2>
+                <h2>{t('Projects')}</h2>
                 <div className="h2Description">
-                    All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization.
-                    iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue.
-                    MongoDB as main database allow fast writting to DB, which is the most important part of "native experience".
-                    When user is forced to search in DB, Juciify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.
+                    {t('ProjectsDescription')}
                 </div>
+                <h3 className="ProjectsLetsTalk">{t('ProjectsDescription2')}</h3>
                 {
                     ProjectsArray.map(project =>
                         <div className="ProjectsBox">
@@ -47,6 +47,7 @@ const Projects: FunctionComponent = () => {
                                 project.img
                                     ?
                                     <img
+                                        style={{ cursor: 'pointer' }}
                                         onClick={
                                             () => {
                                                 setImg(project.img)
@@ -63,11 +64,11 @@ const Projects: FunctionComponent = () => {
                             <div className="ProjectBoxDescription">
                                 <h3>{project.title}</h3>
                                 <div>
-                                    <div className="ProjectsBoxDescriptionBold">Status:</div>
-                                    {project.status}
+                                    <div className="ProjectsBoxDescriptionBold">{t('Status')}:</div>
+                                    {t(project.status)}
                                 </div>
                                 <div>
-                                    <div className="ProjectsBoxDescriptionBold">Technology:</div>
+                                    <div className="ProjectsBoxDescriptionBold">{t('Technology')}:</div>
                                     {project.technology.map((technology, index) =>
                                         (index + 1) != project.technology.length
                                             ?
@@ -77,15 +78,15 @@ const Projects: FunctionComponent = () => {
                                     )}
                                 </div>
                                 <div>
-                                    <div className="ProjectsBoxDescriptionBold">Description:</div>
-                                    {project.description}
+                                    <div className="ProjectsBoxDescriptionBold">{t('Description')}:</div>
+                                    {t(project.description)}
                                 </div>
                                 <div>
-                                    <div className="ProjectsBoxDescriptionBold">Nerd informations:</div>
-                                    {project.nerdInformations}
+                                    <div className="ProjectsBoxDescriptionBold">{t('NerdInformations')}:</div>
+                                    {t(project.nerdInformations)}
                                 </div>
                                 <div>
-                                    <div className="ProjectsBoxDescriptionBold">Live version:</div>
+                                    <div className="ProjectsBoxDescriptionBold">{t('LiveVersion')}:</div>
                                     {
                                         project.live
                                             ?
@@ -95,7 +96,7 @@ const Projects: FunctionComponent = () => {
                                     }
                                 </div>
                                 <div>
-                                    <div className="ProjectsBoxDescriptionBold">Live version password:</div>
+                                    <div className="ProjectsBoxDescriptionBold">{t('LiveVersionPassword')}:</div>
                                     {
                                         project.livePass
                                             ?
@@ -105,7 +106,7 @@ const Projects: FunctionComponent = () => {
                                     }
                                 </div>
                                 <div>
-                                    <div className="ProjectsBoxDescriptionBold">Source:</div>
+                                    <div className="ProjectsBoxDescriptionBold">{t('Source')}:</div>
                                     <a target="_blank" href={project.source}>{project.source}</a>
                                 </div>
                             </div>

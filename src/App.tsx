@@ -7,6 +7,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const App: FunctionComponent = () => {
     const theme = createTheme({
+        typography: {
+            fontFamily: "Quicksand, sans-serif",
+        },
         palette: {
             mode: 'dark',
         },
