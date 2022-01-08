@@ -1,18 +1,31 @@
 import { FunctionComponent } from "react";
 import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import SaveIcon from '@mui/icons-material/Save';
-import PrintIcon from '@mui/icons-material/Print';
-import ShareIcon from '@mui/icons-material/Share';
+import ChatIcon from '@mui/icons-material/Chat';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import EmailIcon from '@mui/icons-material/Email';
 
-const actions = [
-    { icon: <FileCopyIcon />, name: 'Copy' },
-    { icon: <SaveIcon />, name: 'Save' },
-    { icon: <PrintIcon />, name: 'Print' },
-    { icon: <ShareIcon />, name: 'Share' },
+const contact = [
+    {
+        icon: <GitHubIcon />,
+        name: 'Github',
+        // @ts-ignore
+        function: () => window.open('https://github.com/whoisarjen', '_blank').focus()
+    },
+    {
+        icon: <EmailIcon />,
+        name: 'Email',
+        // @ts-ignore
+        function: () => window.open('mailto:KamilOw97@gmail.com', '_blank').focus()
+    },
+    {
+        icon: <FacebookIcon />,
+        name: 'Facebook',
+        // @ts-ignore
+        function: () => window.open('https://www.facebook.com/kamil.owczarek.1/', '_blank').focus()
+    },
 ];
 
 const SocialButton: FunctionComponent = () => {
@@ -22,10 +35,11 @@ const SocialButton: FunctionComponent = () => {
                 <SpeedDial
                     ariaLabel="SpeedDial basic example"
                     sx={{ position: 'absolute', bottom: 16, left: 16 }}
-                    icon={<SpeedDialIcon />}
+                    icon={<ChatIcon sx={{ color: "#fff" }} />}
                 >
-                    {actions.map((action) => (
+                    {contact.map((action) => (
                         <SpeedDialAction
+                            onClick={action.function}
                             key={action.name}
                             icon={action.icon}
                             tooltipTitle={action.name}

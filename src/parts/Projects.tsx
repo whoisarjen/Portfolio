@@ -6,12 +6,12 @@ const ProjectsArray = [
         title: 'Juicify 2.0 via React',
         status: 'Preparing for first live tests.',
         description: `Juicify is a PWA application, which is a coach in your pocket. It allow all function like MyFitnessPal and more, but also provides an opportunity of tracking workouts, watching other's people progress and the way they train. The main point of the app is analyzing user's way of eatting and helping him achieving body goals in the fastest and the most sience way. Not enough? It almost fully works in offline mode.`,
-        technology: ['Next.js', 'React', 'Typescript', 'Javascript', 'MongoDB', 'Express', 'JWT', 'Redis', 'Socket.io', 'PWA', 'IndexedDB', 'MUI', 'i18n', 'Cookies', 'etc.'],
+        technology: ['Next.js', 'React', 'Redux toolkit', 'Typescript', 'Javascript', 'MongoDB', 'Express', 'JWT', 'Redis', 'Socket.io', 'PWA', 'IndexedDB', 'MUI', 'i18n', 'Cookies', 'etc.'],
         nerdInformations: `All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization. iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue. MongoDB as main database allow fast writting to DB, which is the most important part of "native experience". When user is forced to search in DB, Juciify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.`,
-        live: 'https://juicify.app',
-        livePass: '-',
+        live: '',
+        livePass: '',
         source: 'https://github.com/whoisarjen/Juicify',
-        // img: 'https://i.imgur.com/fw8UjMc.png'
+        img: ''
     },
     {
         title: 'Juicify 1.0 via Vue',
@@ -20,7 +20,7 @@ const ProjectsArray = [
         technology: ['Vue', 'Javascript', 'MongoDB', 'Express', 'JWT', 'Redis', 'Socket.io', 'PWA', 'IndexedDB', 'Vuetify', 'i18n', 'Cookies', 'etc.'],
         nerdInformations: `All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization. iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue. MongoDB as main database allow fast writting to DB, which is the most important part of "native experience". When user is forced to search in DB, Juciify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.`,
         live: 'https://juicify.app',
-        livePass: '-',
+        livePass: 'Marek : Marek123',
         source: 'https://github.com/whoisarjen/Juicify-Beta-V1.0',
         img: 'https://i.imgur.com/tJXhy7K.png'
     }
@@ -87,14 +87,21 @@ const Projects: FunctionComponent = () => {
                                 <div>
                                     <div className="ProjectsBoxDescriptionBold">Live version:</div>
                                     {
-                                        project.live &&
-                                        <a href={project.live} target="_blank">{project.live}</a>
+                                        project.live
+                                            ?
+                                            <a href={project.live} target="_blank">{project.live}</a>
+                                            :
+                                            '-'
                                     }
                                 </div>
                                 <div>
                                     <div className="ProjectsBoxDescriptionBold">Live version password:</div>
                                     {
                                         project.livePass
+                                            ?
+                                            project.livePass
+                                            :
+                                            '-'
                                     }
                                 </div>
                                 <div>

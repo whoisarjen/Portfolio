@@ -2,6 +2,7 @@
 
 :root {
   --color: #fff;
+  --padding: 25px;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
 
 a {
   color: var(--color);
+  text-decoration-color: #90caf9;
 }
 
 .App {
@@ -27,7 +29,7 @@ a {
 
 .Home {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-rows: 1fr 4fr 1fr;
 }
@@ -46,6 +48,18 @@ a {
 .HomeBox {
   margin: auto;
   max-width: 800px;
+  width: calc(100% - calc(var(--padding) * 2));
+  padding: var(--padding);
+}
+
+.HomeBoxSocial {
+  margin: 2rem 0 0;
+}
+
+.HomeBox a {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #90caf9;
 }
 
 .HomeBox h1 {
@@ -99,21 +113,31 @@ h2 {
 
 .Education {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-auto-rows: auto auto 1fr;
+}
+
+.Projects {
+  min-height: 100vh;
+  display: grid;
 }
 
 .ProjectsBox {
   max-width: 1200px;
   margin: auto;
-  min-height: 100px;
   display: grid;
   grid-template-columns: 350px auto;
   grid-gap: 25px;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #90caf9;
   width: calc(100% - 50px);
   padding: 50px 25px;
+}
+
+@media (max-width: 750px) {
+  .ProjectsBox {
+    grid-template-columns: auto;
+  }
 }
 
 .ProjectsBox h3 {
@@ -145,7 +169,31 @@ h2 {
 }
 
 .Contact {
-  min-height: 300px;
+  width: calc(100% - calc(var(--padding) * 2));
+  margin: auto;
+  max-width: 1200px;
+  padding: var(--padding);
+}
+
+.Contact .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.Contact h2 {
+  margin: 40px 0;
+}
+
+.Contact .ContactOptions {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 40px;
+}
+
+.Contact .ContactOptions div {
+  display: grid;
+  margin: auto;
 }
 
 .arrowGrid {
@@ -188,5 +236,15 @@ h2 {
   }
   60% {
     transform: translateY(-15px);
+  }
+}
+
+@media (max-width: 750px) {
+  .HomeBox h1 {
+    font-size: 2.75rem;
+  }
+
+  .HomeBoxDescription {
+    font-size: 1.1rem;
   }
 }

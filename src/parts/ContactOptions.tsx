@@ -3,7 +3,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import EmailIcon from '@mui/icons-material/Email';
 import IconButton from '@mui/material/IconButton';
-import ContactOptions from "./ContactOptions";
 
 const contact = [
     {
@@ -26,15 +25,30 @@ const contact = [
     },
 ].reverse();
 
-const Contact: FunctionComponent = () => {
+interface ContactOptionsProps {
+    isAddDiv?: boolean
+}
+
+const ContactOptions: FunctionComponent<ContactOptionsProps> = ({ isAddDiv = false }) => {
     return (
-        <div className="Contact">
-            <h2>Contact</h2>
-            <div className="ContactGrid">
-                <ContactOptions isAddDiv={true} />
-            </div>
+        <div className="ContactOptions">
+            {
+                contact.map(x =>
+                    isAddDiv
+                        ?
+                        <div>
+                            <IconButton onClick={x.function} color="primary" component="span">
+                                {x.icon}
+                            </IconButton>
+                        </div>
+                        :
+                        <IconButton onClick={x.function} color="primary" component="span">
+                            {x.icon}
+                        </IconButton>
+                )
+            }
         </div>
     )
 }
 
-export default Contact;
+export default ContactOptions;

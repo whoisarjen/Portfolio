@@ -1,11 +1,23 @@
 import { FunctionComponent, useState } from "react";
-import SocialButton from "./SocialButton";
+// import SocialButton from "./SocialButton";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import EmailIcon from '@mui/icons-material/Email';
+import IconButton from '@mui/material/IconButton';
 // @ts-ignore
 import { Typing } from "typing-effect-reactjs"
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link } from 'react-scroll'
 import ReactFlagsSelect from 'react-flags-select';
 import Navbar from "./Navbar";
+import ContactOptions from "./ContactOptions";
+
+const getAge = (date: Date) => {
+    const month_diff = Date.now() - new Date(date).getTime();
+    const age_dt = new Date(month_diff);
+    const year = age_dt.getUTCFullYear();
+    return Math.abs(year - 1970);
+}
 
 const Home: FunctionComponent = () => {
     const [selected, setSelected] = useState('GB');
@@ -34,8 +46,10 @@ const Home: FunctionComponent = () => {
                     disableBlinkingOnEnd="false"
                 />
                 <div className="HomeBoxDescription">
-                    Frontend developer, UX architect and Javascript engineer, Photochromic Lens enthusiast, practicing minimalist, and Pop Music & Jazz lover in search of flow.
-                    Working with my hands to make magic happen on the internet. View my Projects, Articles, Resumé, Contact Me, or send me an email at hellocodewonders@gmail.com.
+                    {getAge(new Date('1997-01-31'))} year old, Javascript engineer, practicing minimalisting style & doing magic things to make internet a better place. View my <Link to="Education">Education</Link> or  <Link to="Projects">Projects</Link>. You can reach Me via social media or send an email at KamilOw97@gmail.com.
+                </div>
+                <div className="HomeBoxSocial">
+                    <ContactOptions />
                 </div>
             </div>
             <div className="HomeHolder">
@@ -53,7 +67,7 @@ const Home: FunctionComponent = () => {
                     />
                 </div>
             </div>
-            <SocialButton />
+            {/* <SocialButton /> */}
         </div>
     )
 }
