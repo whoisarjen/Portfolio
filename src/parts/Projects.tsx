@@ -9,6 +9,7 @@ const ProjectsArray = [
         technology: ['Next.js', 'React', 'Typescript', 'Javascript', 'MongoDB', 'Express', 'JWT', 'Redis', 'Socket.io', 'PWA', 'IndexedDB', 'MUI', 'i18n', 'Cookies', 'etc.'],
         nerdInformations: `All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization. iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue. MongoDB as main database allow fast writting to DB, which is the most important part of "native experience". When user is forced to search in DB, Juciify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.`,
         live: 'https://juicify.app',
+        livePass: '-',
         source: 'https://github.com/whoisarjen/Juicify',
         // img: 'https://i.imgur.com/fw8UjMc.png'
     },
@@ -19,6 +20,7 @@ const ProjectsArray = [
         technology: ['Vue', 'Javascript', 'MongoDB', 'Express', 'JWT', 'Redis', 'Socket.io', 'PWA', 'IndexedDB', 'Vuetify', 'i18n', 'Cookies', 'etc.'],
         nerdInformations: `All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization. iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue. MongoDB as main database allow fast writting to DB, which is the most important part of "native experience". When user is forced to search in DB, Juciify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.`,
         live: 'https://juicify.app',
+        livePass: '-',
         source: 'https://github.com/whoisarjen/Juicify-Beta-V1.0',
         img: 'https://i.imgur.com/tJXhy7K.png'
     }
@@ -87,6 +89,12 @@ const Projects: FunctionComponent = () => {
                                     {
                                         project.live &&
                                         <a href={project.live} target="_blank">{project.live}</a>
+                                    }
+                                </div>
+                                <div>
+                                    <div className="ProjectsBoxDescriptionBold">Live version password:</div>
+                                    {
+                                        project.livePass
                                     }
                                 </div>
                                 <div>

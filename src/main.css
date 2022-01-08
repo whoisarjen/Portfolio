@@ -150,7 +150,7 @@ h2 {
 
 .arrowGrid {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 73px 1fr 73px;
   width: calc(100% - 24px);
   padding: 12px;
   margin: auto auto 0;
