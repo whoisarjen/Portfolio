@@ -1,15 +1,13 @@
 import { FunctionComponent, useState } from "react";
 import SocialButton from "./SocialButton";
+// @ts-ignore
 import { Typing } from "typing-effect-reactjs"
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link } from 'react-scroll'
 import ReactFlagsSelect from 'react-flags-select';
+import Navbar from "./Navbar";
 
-interface HomeProps {
-    children: any
-}
-
-const Home: FunctionComponent<HomeProps> = ({ children }) => {
+const Home: FunctionComponent = () => {
     const [selected, setSelected] = useState('GB');
 
     setTimeout(() => {
@@ -22,7 +20,7 @@ const Home: FunctionComponent<HomeProps> = ({ children }) => {
 
     return (
         <div className="Home">
-            {children}
+            <Navbar />
             <div className="HomeBox">
                 <Typing
                     text="Hi, I'm Kamil Owczarek."
