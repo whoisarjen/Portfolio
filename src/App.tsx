@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FunctionComponent } from "react";
+import Contact from "./parts/Contact";
+import Education from "./parts/Education";
+import Home from "./parts/Home";
+import Projects from "./parts/Projects";
+import { Link } from 'react-scroll'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App: FunctionComponent = () => {
+    return (
+        <div className="App">
+            <Home>
+                <nav className="Navbar">
+                    <ul>
+                        <li><Link to="Education">Education</Link></li>
+                        <li><Link to="Projects">Projects</Link></li>
+                        <li><Link to="Contact">Contact</Link></li>
+                    </ul>
+                </nav>
+            </Home>
+            <Education />
+            <Projects />
+            <Contact />
+        </div>
+    );
 }
 
 export default App;
