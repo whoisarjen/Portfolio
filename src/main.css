@@ -3,13 +3,14 @@
 :root {
   --color: #fff;
   --padding: 25px;
+  --background: #121212;
 }
 
 body {
   padding: 0;
   margin: 0;
   font-family: "Quicksand", sans-serif;
-  background: #121212;
+  background: var(--background);
   color: var(--color);
 }
 
@@ -72,28 +73,21 @@ a {
 
 .HomeBoxDescription {
   font-size: 1.4rem;
-  text-transform: capitalize; 
+  text-transform: capitalize;
 }
 
 .Navbar {
   width: 100%;
   height: 100%;
   display: grid;
-}
-
-.Navbar ul {
-  list-style-type: none;
-  padding: 0;
   margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  text-align: center;
-  width: 100%;
   max-width: 600px;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.Navbar li {
-  cursor: pointer;
+.Navbar div{
+  margin: auto;
 }
 
 .noRightBorder span {
@@ -106,7 +100,7 @@ h2 {
 }
 
 .h2Description {
-  width: calc( 100% - calc(var(--padding) * 2));
+  width: calc(100% - calc(var(--padding) * 2));
   padding: var(--padding);
   max-width: 600px;
   text-align: center;
@@ -125,7 +119,7 @@ h2 {
   display: grid;
 }
 
-.ProjectsLetsTalk{
+.ProjectsLetsTalk {
   padding: var(--padding);
   width: calc(100% - calc(var(--padding) * 2));
   margin: auto;
@@ -206,7 +200,6 @@ h2 {
 
 .arrowGrid {
   display: grid;
-  grid-template-columns: 73px 1fr 73px;
   width: calc(100% - 24px);
   padding: 12px;
   margin: auto auto 0;

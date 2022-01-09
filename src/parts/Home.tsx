@@ -1,13 +1,11 @@
-import { FunctionComponent, useState, useEffect } from "react";
+import { FunctionComponent } from "react";
 // @ts-ignore
 import { Typing } from "typing-effect-reactjs"
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link } from 'react-scroll'
-import ReactFlagsSelect from 'react-flags-select';
 import Navbar from "./Navbar";
 import ContactOptions from "./ContactOptions";
 import { useTranslation } from "react-i18next";
-import i18n from '../i18n';
 
 const getAge = (date: Date) => {
     const month_diff = Date.now() - new Date(date).getTime();
@@ -18,7 +16,6 @@ const getAge = (date: Date) => {
 
 const Home: FunctionComponent = () => {
     const { t } = useTranslation()
-    const [selected, setSelected] = useState('GB');
 
     setTimeout(() => {
         const typing: any = document.querySelector('.HomeBox h1')
@@ -27,10 +24,6 @@ const Home: FunctionComponent = () => {
         const arrow: any = document.querySelector('.arrowGrid')
         arrow.style.display = 'grid'
     }, 6000)
-
-    useEffect(() => {
-        i18n.changeLanguage(selected);
-    }, [selected])
 
     return (
         <div className="Home">
@@ -56,20 +49,11 @@ const Home: FunctionComponent = () => {
             </div>
             <div className="HomeHolder">
                 <div className="arrowGrid">
-                    <div />
                     <div className="arrow bounce">
                         <Link to="Education"><KeyboardArrowDownIcon className="" /></Link>
                     </div>
-                    <ReactFlagsSelect
-                        selected={selected}
-                        onSelect={code => setSelected(code)}
-                        countries={["GB", "PL"]}
-                        showOptionLabel={false}
-                        showSelectedLabel={false}
-                    />
                 </div>
             </div>
-            {/* <SocialButton /> */}
         </div>
     )
 }

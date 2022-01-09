@@ -1,17 +1,34 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-scroll'
+import ReactFlagsSelect from 'react-flags-select';
+import i18n from '../i18n';
 
 const Navbar: FunctionComponent = () => {
     const { t } = useTranslation()
+    const [selected, setSelected] = useState('GB');
+
+    useEffect(() => {
+        i18n.changeLanguage(selected);
+    }, [selected])
 
     return (
         <nav className="Navbar">
-            <ul>
-                <li><Link to="Education">{t('Education')}</Link></li>
-                <li><Link to="Projects">{t('Projects')}</Link></li>
-                <li><Link to="Contact">{t('Contact')}</Link></li>
-            </ul>
+            {/* <ul> */}
+                <div><Link to="Education">{t('Education')}</Link></div>
+                <div><Link to="Projects">{t('Projects')}</Link></div>
+                <div><Link to="Contact">{t('Contact')}</Link></div>
+                <div>
+                    <ReactFlagsSelect
+                        className="flags"
+                        selected={selected}
+                        onSelect={code => setSelected(code)}
+                        countries={["GB", "PL"]}
+                        showOptionLabel={false}
+                        showSelectedLabel={false}
+                    />
+                </div>
+            {/* </ul> */}
         </nav>
     )
 }
