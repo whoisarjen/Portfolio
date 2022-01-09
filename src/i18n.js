@@ -28,10 +28,10 @@ const resources = {
             Now: "Now",
             Juicify1Status: "Project ended. Reached satisfying level, reaching 500+ users, because of goal, which is mastering React, decided to stop working on this code and rewrite whole application.",
             Juicify1Description: "Juicify is a PWA application, which is a coach in your pocket. It allow all function like MyFitnessPal and more, but also provides an opportunity of tracking workouts, watching other's people progress and the way they train. The main point of the app is analyzing user's way of eatting and helping him achieving body goals in the fastest and the most sience way. Not enough? It almost fully works in offline mode.",
-            Juicify1NerfInformations: `All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization. iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue. MongoDB as main database allow fast writting to DB, which is the most important part of "native experience". When user is forced to search in DB, Juciify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.`,
+            Juicify1NerfInformations: `All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization. iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue. MongoDB as main database allow fast writting to DB, which is the most important part of "native experience". When user is forced to search in DB, Juicify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.`,
             Juicify2Status: "Preparing for first live tests.",
             Juicify2Description: "Juicify is a PWA application, which is a coach in your pocket. It allow all function like MyFitnessPal and more, but also provides an opportunity of tracking workouts, watching other's people progress and the way they train. The main point of the app is analyzing user's way of eatting and helping him achieving body goals in the fastest and the most sience way. Not enough? It almost fully works in offline mode.",
-            Juicify2NerfInformations: `All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization. iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue. MongoDB as main database allow fast writting to DB, which is the most important part of "native experience". When user is forced to search in DB, Juciify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.`
+            Juicify2NerfInformations: `All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization. iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue. MongoDB as main database allow fast writting to DB, which is the most important part of "native experience". When user is forced to search in DB, Juicify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.`
         }
     },
     PL: {
@@ -72,8 +72,7 @@ i18n
     .use(initReactI18next)
     .init({
         resources,
-        // lng: "GB",
-        lng: "PL",
+        lng: "GB",
         interpolation: {
             escapeValue: false
         }

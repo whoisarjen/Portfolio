@@ -14,21 +14,17 @@ const Navbar: FunctionComponent = () => {
 
     return (
         <nav className="Navbar">
-            {/* <ul> */}
-                <div><Link to="Education">{t('Education')}</Link></div>
-                <div><Link to="Projects">{t('Projects')}</Link></div>
-                <div><Link to="Contact">{t('Contact')}</Link></div>
-                <div>
-                    <ReactFlagsSelect
-                        className="flags"
-                        selected={selected}
-                        onSelect={code => setSelected(code)}
-                        countries={["GB", "PL"]}
-                        showOptionLabel={false}
-                        showSelectedLabel={false}
-                    />
-                </div>
-            {/* </ul> */}
+            <div><Link to="Education">{t('Education')}</Link></div>
+            <div><Link to="Projects">{t('Projects')}</Link></div>
+            <div><Link to="Contact">{t('Contact')}</Link></div>
+            <ReactFlagsSelect
+                className="flags"
+                selected={selected}
+                onSelect={code => setSelected(code)}
+                countries={["GB", "PL"]}
+                showOptionLabel={false}
+                showSelectedLabel={false}
+            />
         </nav>
     )
 }

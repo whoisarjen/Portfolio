@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 // @ts-ignore
 import { Typing } from "typing-effect-reactjs"
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -16,6 +16,7 @@ const getAge = (date: Date) => {
 
 const Home: FunctionComponent = () => {
     const { t } = useTranslation()
+    const [isArrow, setIsArrow] = useState(true)
 
     setTimeout(() => {
         const typing: any = document.querySelector('.HomeBox h1')
@@ -24,6 +25,14 @@ const Home: FunctionComponent = () => {
         const arrow: any = document.querySelector('.arrowGrid')
         arrow.style.display = 'grid'
     }, 6000)
+
+    window.addEventListener('scroll', () => {
+        if (window.innerHeight / 2 < window.scrollY) {
+            setIsArrow(false)
+        } else {
+            setIsArrow(true)
+        }
+    })
 
     return (
         <div className="Home">
@@ -50,7 +59,10 @@ const Home: FunctionComponent = () => {
             <div className="HomeHolder">
                 <div className="arrowGrid">
                     <div className="arrow bounce">
-                        <Link to="Education"><KeyboardArrowDownIcon className="" /></Link>
+                        {
+                            isArrow &&
+                            <Link to="Education"><KeyboardArrowDownIcon className="" /></Link>
+                        }
                     </div>
                 </div>
             </div>
