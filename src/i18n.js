@@ -26,7 +26,7 @@ const resources = {
             HomeBoxDescription2: "You can reach Me via social media or send an email at KamilOw97@gmail.com.",
             Contact: "Contact",
             Now: "Now",
-            Juicify1Status: "Project ended. Reached satisfying level, reaching 500+ users, because of goal, which is mastering React, decided to stop working on this code and rewrite whole application.",
+            Juicify1Status: "Project ended. Reached satisfying level, getting 500+ users, because of goal, which is mastering React, decided to stop working on this code and rewrite whole application.",
             Juicify1Description: "Juicify is a PWA application, which is a coach in your pocket. It allow all function like MyFitnessPal and more, but also provides an opportunity of tracking workouts, watching other's people progress and the way they train. The main point of the app is analyzing user's way of eatting and helping him achieving body goals in the fastest and the most sience way. Not enough? It almost fully works in offline mode.",
             Juicify1NerfInformations: `All the technology probably are not new for you, but what is the biggest flex of the app is the way it handles offline synchronization. iOS does not support PWA background synchronization, but thanks to socket, we can kind of avoid the issue. MongoDB as main database allow fast writting to DB, which is the most important part of "native experience". When user is forced to search in DB, Juicify supports it with cache methods like indexedDB and Redis, reusing previous queries's results from all users.`,
             Juicify2Status: "Preparing for first live tests.",
@@ -38,7 +38,7 @@ const resources = {
         translation: {
             or: 'lub',
             Education: "Edukacja",
-            EducationDescription: "Od szkoły średniej moja edukacja jest powiązana stricte z Informatyką. Pozwoliło mi to na poznanie wielu różnych dziedzin tego zagadnienia, ale zawsze interesowało mnie przede wszystkim programowanie. Przed okres nauki poznałem wiele języków programowania, dzięki czemu łatwiej było mi zdecydować się na konkretny kierunek, Javascript Engineer.",
+            EducationDescription: "Od szkoły średniej moja edukacja jest powiązana stricte z Informatyką. Pozwoliło mi to na poznanie wielu różnych dziedzin tego zagadnienia i umocnienie przekonania, że to właśnie programowanie jest dla mnie. Przez okres kształcenia spróbowałem wielu języków programowania, ale to Javascript Engineer jest profilem, który najbardziej mi odpowiada.",
             MasterIT: "Magister IT",
             EngineereIT: "Inżynier IT",
             HighSchoolIT: "Technikum IT",
