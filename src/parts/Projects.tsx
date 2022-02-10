@@ -7,7 +7,7 @@ const ProjectsArray = [
         title: 'Juicify 2.0 via React',
         status: 'Juicify2Status',
         description: `Juicify2Description`,
-        technology: ['Next.js', 'React', 'Redux toolkit', 'Typescript', 'Javascript', 'Web workers', 'Styled-components', 'Jest', 'MongoDB', 'Express', 'JWT', 'Redis', 'Socket.io', 'PWA', 'IndexedDB', 'MUI', 'i18n', 'Cookies', 'etc.'],
+        technology: ['Next.js', 'React', 'Redux toolkit', 'Typescript', 'Javascript', 'Web workers', 'Styled-components', 'Jest', 'MongoDB', 'Express', 'JWT', 'Redis', 'Socket.io', 'PWA', 'IndexedDB', 'MUI', 'i18n', 'Cookies', 'Ubuntu (VPS)', 'etc.'],
         nerdInformations: `Juicify2NerfInformations`,
         live: '',
         livePass: '',
