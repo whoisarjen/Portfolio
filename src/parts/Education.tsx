@@ -74,7 +74,7 @@ const Education: FunctionComponent = () => {
                         variant="body2"
                         color="text.secondary"
                     >
-                        09.2013 - 06.2021
+                        09.2013 - 06.2017
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                         <TimelineConnector />
