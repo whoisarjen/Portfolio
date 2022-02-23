@@ -17,14 +17,14 @@ const Navbar: FunctionComponent = () => {
             <div><Link to="Education">{t('Education')}</Link></div>
             <div><Link to="Projects">{t('Projects')}</Link></div>
             <div><Link to="Contact">{t('Contact')}</Link></div>
-            <ReactFlagsSelect
+            {/* <ReactFlagsSelect
                 className="flags"
                 selected={selected}
                 onSelect={code => setSelected(code)}
                 countries={["GB", "PL"]}
                 showOptionLabel={false}
                 showSelectedLabel={false}
-            />
+            /> */}
         </nav>
     )
 }

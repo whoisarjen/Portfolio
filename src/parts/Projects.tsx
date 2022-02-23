@@ -9,8 +9,8 @@ const ProjectsArray = [
         description: `Juicify2Description`,
         technology: ['Next.js', 'React', 'Redux toolkit', 'Typescript', 'Javascript', 'Web workers', 'Styled-components', 'Jest', 'MongoDB', 'Express', 'JWT', 'Redis', 'Socket.io', 'PWA', 'IndexedDB', 'MUI', 'i18n', 'Cookies', 'Ubuntu (VPS)', 'etc.'],
         nerdInformations: `Juicify2NerfInformations`,
-        live: '',
-        livePass: '',
+        live: 'https://juicify.app',
+        livePass: 'Marek : Marek123',
         source: 'https://github.com/whoisarjen/Juicify',
         img: ''
     },
@@ -20,7 +20,7 @@ const ProjectsArray = [
         description: `Juicify1Description`,
         technology: ['Vue', 'Javascript', 'MongoDB', 'Express', 'JWT', 'Redis', 'Socket.io', 'PWA', 'IndexedDB', 'Vuetify', 'i18n', 'Cookies', 'etc.'],
         nerdInformations: `Juicify1NerfInformations`,
-        live: 'https://juicify.app',
+        live: 'https://beta.juicify.app',
         livePass: 'Marek : Marek123',
         source: 'https://github.com/whoisarjen/Juicify-Beta-V1.0',
         img: 'https://i.imgur.com/tJXhy7K.png'

@@ -83,10 +83,11 @@ a {
   margin: auto;
   max-width: 600px;
   text-align: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.Navbar div{
+.Navbar div {
   margin: auto;
 }
 
